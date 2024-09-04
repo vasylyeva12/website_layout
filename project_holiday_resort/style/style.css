@@ -1,0 +1,170 @@
+@import url("fonts.css");
+@import url("null.css");
+
+body {
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+[class*="__container"] {
+  max-width: 1054px;
+  margin: 0 auto;
+  padding-inline: 15px;
+  /* padding-left: 15px;
+padding-right: 15px;  - это тоже самое, что padding-inline */
+  transition: background-color 0.3s;
+}
+
+/* Components */
+.button {
+  border-radius: 4px;
+  background-color: #d8ae5e;
+  color: #f4f4f4;
+
+  text-transform: uppercase;
+  padding: 8px 16px;
+}
+/* медиа запрос делает hover только на устройствах, на которых это возможно */
+@media (any-hover: hover) {
+  .button:hover {
+    background-color: #9a7c43;
+  }
+}
+
+.header-block {
+  text-align: center;
+}
+
+.header-block::after{
+    content: '';
+    width: 120px;
+    height: 1px;
+    background-color: #D8AE5E;
+    margin-top: 32px;
+}
+.header-block__title {
+  text-transform: uppercase;
+  font-family: "Bodoni 72", serif;
+  font-size: 64px;
+}
+
+.header-block__title:not(last-child) {
+  margin-bottom: 8px;
+}
+.header-block__text {
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.header-block__text p:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+/* ------------------ */
+
+.wrapper {
+  min-height: 100%;
+}
+
+.hero {
+  position: relative;
+  color: white;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: black;
+  z-index: 2;
+  opacity: 0.6;
+}
+
+.hero__container {
+  position: relative;
+  z-index: 3;
+  min-height: 100svh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 15.533981svh; /* 128/824 */
+
+  padding-block: 7.7669svh; /* 64/824 */
+}
+.hero_header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 3.883495svh; /* 32/824 */
+}
+.hero__logo {
+}
+/* .hero__logo:not(:last-child) {
+    margin-bottom: 32px;
+} */
+
+.hero__menu {
+}
+.menu {
+}
+.menu__list {
+  display: flex;
+  justify-content: center;
+
+  /* ОБЯЗАТЕЛЬНО */
+  flex-wrap: wrap;
+
+  column-gap: 16px;
+  row-gap: 15px;
+}
+.menu__item {
+}
+.menu__link {
+}
+
+@media (any-hover: hover) {
+  .menu__link:hover {
+    text-decoration: underline;
+  }
+}
+.hero__content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 2.427184svh; /* 20/824 */
+}
+.hero__title {
+  text-transform: uppercase;
+  font-family: "Bodoni 72", serif;
+  font-size: 96px;
+}
+.hero__lable {
+  letter-spacing: 3.6px;
+  font-size: 24px;
+  text-transform: uppercase;
+}
+.hero__button {
+}
+.hero__image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  object-fit: cover;
+  object-position: center;
+}
+
+@media (max-width: 767.98px) {
+  .hero__title {
+    font-size: 66px;
+  }
+  .menu__link {
+    font-size: 20px;
+  }
+}
